@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seni Seviyorum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-brand">💕 Bizim Hikayemiz</div>
+        <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menüyü Aç/Kapat">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="#home" onclick="closeMenu()">🏠 Ana Sayfa</a></li>
+            <li><a href="#counter" onclick="closeMenu()">⏰ Zamanımız</a></li>
+            <li><a href="#birthdays" onclick="closeMenu()">🎂 Doğum Günleri</a></li>
+            <li><a href="#gallery" onclick="closeMenu()">📸 Anılarımız</a></li>
+            <li><a href="#map" onclick="closeMenu()">📍 İlk Randevu</a></li>
+            <li><a href="#stars" onclick="closeMenu()">⭐ Yıldız Haritası</a></li>
+            <li><a href="#music" onclick="closeMenu()">🎵 Şarkımız</a></li>
+            <li><a href="#message" onclick="closeMenu()">💌 Mesajım</a></li>
+            <li><a href="#thermometer" onclick="closeMenu()">🌡️ Aşk Seviyesi</a></li>
+            <li><a href="#daily-quote" onclick="closeMenu()">💭 Günün Sözü</a></li>
+            <li><a href="#love-languages" onclick="closeMenu()">🌍 Diller</a></li>
+            <li><a href="#games" onclick="closeMenu()">🎮 Oyunlar</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>İyiki seninleyim, seninim ❤️</h1>
+        <div class="photo-frame">
+            <img src="img/giriş.jpeg" alt="Bizim fotoğrafımız">
+        </div>
+        <a href="#gallery" class="gallery-button">
+            📸 Anılarımızı Gör
+        </a>
+    </section>
+
+    <section id="counter">
+        <h2>Şu Kadardır Birlikteyiz:</h2>
+        <div id="timer">Yükleniyor...</div>
+    </section>
+
+    <section id="birthdays">
+        <h2>🎂 Özel Günlerimiz</h2>
+        <div class="birthdays-container">
+            <div class="birthday-card">
+                <div class="birthday-icon">🎉</div>
+                <h3>Senin Doğum Günün</h3>
+                <div class="birthday-date">10 Temmuz</div>
+                <div class="birthday-countdown" id="birthday1-countdown"></div>
+                <p class="birthday-message">Dünyaya geldiğin gün benim için de özel! 💕</p>
+            </div>
+            <div class="birthday-card">
+                <div class="birthday-icon">🎈</div>
+                <h3>Benim Doğum Günüm</h3>
+                <div class="birthday-date">30 Ağustos</div>
+                <div class="birthday-countdown" id="birthday2-countdown"></div>
+                <p class="birthday-message">Seninle kutladığım her doğum günü harika! 🎊</p>
+            </div>
+            <div class="birthday-card special-card">
+                <div class="birthday-icon">💑</div>
+                <h3>Yıldönümümüz</h3>
+                <div class="birthday-date">18 Aralık</div>
+                <div class="birthday-countdown" id="anniversary-countdown"></div>
+                <p class="birthday-message">En güzel maceramızın başlangıcı! ❤️</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Anılarımız</h2>
+        <div class="gallery-grid">
+            <div class="photo-item">
+                <img src="img/mackbearda.jpeg" alt="Mackbeard'da">
+                <p>Standart mekanımız Mackbear</p>
+            </div>
+            <div class="photo-item">
+                <img src="img/okey.jpeg" alt="Okey">
+                <p>Okeyde milleti tokatlarken 🎲</p>
+            </div>
+            <div class="photo-item">
+                <img src="img/tatil1.jpeg" alt="Tatil 1">
+                <p>Efsanevi delirdiğimiz Datça 🏖️</p>
+            </div>
+            <div class="photo-item">
+                <img src="img/tatil2.jpeg" alt="Tatil 2">
+                <p>Yüzme bilmeyen Alperen 🌊</p>
+            </div>
+            <div class="photo-item">
+                <img src="img/okulunda.jpeg" alt="Okulunda">
+                <p>CoffeHub Nöbeti</p>
+            </div>
+            <div class="photo-item">
+                <img src="img/okulunda etkinlik.jpeg" alt="Etkinlik">
+                <p>Ayna bulduk mu kaçırmayız</p>
+            </div>
+            <div class="photo-item">
+                <img src="img/yemek.jpeg" alt="Yemek">
+                <p>Her zamanki gibi açız</p>
+            </div>
+            <div class="photo-item">
+                <img src="img/yılbaşı.jpeg" alt="Yılbaşı">
+                <p>Saraçoğlunda sıcak çikolata ve yılbaşı 🎊</p>
+            </div>
+            <div class="photo-item">
+                <img src="img/lego1.jpeg" alt="Lego 1">
+                <p>Lego zamanı </p>
+            </div>
+            <div class="photo-item">
+                <img src="img/lego2.jpeg" alt="Lego 2">
+                <p>Her evrende beraberiz</p>
+            </div>
+            <div class="photo-item">
+                <img src="img/minecraft1.jpeg" alt="Minecraft 1">
+                <p>Minecraft'ta da</p>
+            </div>
+            <div class="photo-item">
+                <img src="img/minecraft2.jpeg" alt="Minecraft 2">
+                <p>Farklı dünyalarda da</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="map">
+        <h2>📍 İlk Date: Kızılay Caribbean Coffee 📍 </h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.893!2d32.853!3d39.9204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34fab09024b39%3A0xc880c475c6fe3f48!2sCaribbean%20Coffee!5e0!3m2!1str!2str!4v1707400000000!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section id="stars">
+        <h2>⭐ O Gece Gökyüzü Böyleydi</h2>
+        <p style="margin-bottom: 30px; font-size: 1.1rem; color: #d91e62;">18 Aralık 2023 - Caribbean Coffee'deki ilk buluşmamız 💫</p>
+        <div class="star-map-container">
+            <div class="star-info">
+                <h3>🌙 O Gece...</h3>
+                <p><strong>📅 Tarih:</strong> 18 Aralık 2023</p>
+                <p><strong>📍 Yer:</strong> Ankara, Kızılay</p>
+                <p><strong>⏰ Zaman:</strong> İlk buluşmamız</p>
+                <p class="star-quote">"Yıldızlar hizalandı ve sen karşıma çıktın..."</p>
+            </div>
+            <div class="star-canvas">
+                <canvas id="starCanvas" width="600" height="600"></canvas>
+                <div class="constellation-overlay">
+                    <div class="star-label" style="top: 20%; left: 30%;">⭐</div>
+                    <div class="star-label" style="top: 40%; left: 60%;">✨</div>
+                    <div class="star-label" style="top: 60%; left: 25%;">💫</div>
+                    <div class="star-label" style="top: 70%; left: 70%;">⭐</div>
+                    <div class="star-label" style="top: 30%; left: 80%;">✨</div>
+                    <div class="star-label heart-star" style="top: 50%; left: 50%;">❤️</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="music">
+        <h2>Bizim Şarkımız - Mabel Matiz "Aşk Yok Olmaktır"</h2>
+        <div class="music-container">
+            <div class="video-notice">
+                <p>🎵 Şarkımızı aşağıdaki butondan dinleyebilirsin!</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=dwUEy1nFUvU" target="_blank" class="youtube-play-button">
+                ▶️ YouTube'da Dinle
+            </a>
+            <a href="https://open.spotify.com/track/3VNIhR0s6ZOI8M5f2WuiKL" target="_blank" class="spotify-play-button">
+                🎶 Spotify'da Dinle
+            </a>
+        </div>
+    </section>
+
+    <section id="message">
+        <h2>18 Aralık 2023 Tarihli Karar</h2>
+        <div class="love-letter">
+            <p><strong>Sanık:</strong> Alperen (Sinirli, kavgacı ve hesap ödemeyi 'unutan'</strong> taraf)</p>
+            <p><strong>Müşteki:</strong> Dünyanın en sabırlı sevgilisi</p>
+            <p><strong>Olay Özeti:</strong> Caribbean Coffee'de çıkan arbede ve sanığın 'hesabı ödemeden firar' teşebbüsü.</p>
+            <p><strong>Hüküm:</strong> Sanığın tüm bu kusurlu hareketlerine rağmen, müştekinin kalbinde müebbet hapis cezasına çarptırılmasına; ancak bu cezanın her gün sevgiyle infaz edilmesine karar verilmiştir.</p>
+            <p>O günkü sinirimi, bugün senin huzurunla takas ettiğim için çok şanslıyım. Hesabı hâlâ ödemedik ama seni çok seviyorum! ❤️</p>
+            <p style="text-align: right; font-style: italic; margin-top: 30px;">- Alperen 💕</p>
+        </div>
+    </section>
+
+    <section id="thermometer">
+        <h2>🌡️ Aşk Termometremiz</h2>
+        <p style="margin-bottom: 30px; font-size: 1.1rem; color: #d91e62;">Aşkımızın sıcaklığını ölç! 💕</p>
+        <div class="thermometer-container">
+            <div class="thermometer-info">
+                <h3>💝 Aşk Seviyesi</h3>
+                <div class="love-level-display">
+                    <span id="love-percentage">100</span>%
+                </div>
+                <div class="love-status" id="love-status">🔥 Ateş Gibi Yanıyor!</div>
+                <button class="measure-button" onclick="measureLove()">🌡️ Tekrar Ölç</button>
+                <p class="thermometer-note">💡 İpucu: Her ölçümde aşkımız daha da artıyor! 😉</p>
+            </div>
+            <div class="thermometer-visual">
+                <div class="thermometer-tube">
+                    <div class="thermometer-mercury" id="mercury">
+                        <div class="mercury-bubble"></div>
+                    </div>
+                    <div class="thermometer-marks">
+                        <div class="mark" style="top: 10%;"><span>100°</span></div>
+                        <div class="mark" style="top: 30%;"><span>80°</span></div>
+                        <div class="mark" style="top: 50%;"><span>60°</span></div>
+                        <div class="mark" style="top: 70%;"><span>40°</span></div>
+                        <div class="mark" style="top: 90%;"><span>20°</span></div>
+                    </div>
+                </div>
+                <div class="thermometer-bulb">
+                    <div class="bulb-inner"></div>
+                </div>
+                <div class="love-particles" id="love-particles"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="daily-quote">
+        <h2>💭 Bugünün Aşk Sözü</h2>
+        <div class="quote-container">
+            <div class="quote-card">
+                <div class="quote-icon">"</div>
+                <p class="quote-text" id="daily-quote-text">Yükleniyor...</p>
+                <div class="quote-author" id="quote-author">-</div>
+                <button class="refresh-quote-button" onclick="getNewQuote()">🔄 Yeni Söz</button>
+            </div>
+            <div class="quote-decoration">
+                <div class="floating-heart" style="animation-delay: 0s;">💕</div>
+                <div class="floating-heart" style="animation-delay: 1s;">💖</div>
+                <div class="floating-heart" style="animation-delay: 2s;">💗</div>
+                <div class="floating-heart" style="animation-delay: 0.5s;">💝</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="love-languages">
+        <h2>🌍 Dünya Dillerinde Seni Seviyorum</h2>
+        <p style="margin-bottom: 30px; font-size: 1.1rem; color: #d91e62;">Kalplere tıkla ve keşfet! 💕</p>
+        <div class="language-hearts">
+            <div class="love-heart" data-lang="tr" data-text="Seni Seviyorum">
+                <span class="heart-emoji">❤️</span>
+                <span class="lang-name">Türkçe</span>
+            </div>
+            <div class="love-heart" data-lang="en" data-text="I Love You">
+                <span class="heart-emoji">💕</span>
+                <span class="lang-name">English</span>
+            </div>
+            <div class="love-heart" data-lang="fr" data-text="Je t'aime">
+                <span class="heart-emoji">💖</span>
+                <span class="lang-name">Français</span>
+            </div>
+            <div class="love-heart" data-lang="es" data-text="Te Amo">
+                <span class="heart-emoji">💗</span>
+                <span class="lang-name">Español</span>
+            </div>
+            <div class="love-heart" data-lang="it" data-text="Ti Amo">
+                <span class="heart-emoji">💓</span>
+                <span class="lang-name">Italiano</span>
+            </div>
+            <div class="love-heart" data-lang="de" data-text="Ich Liebe Dich">
+                <span class="heart-emoji">💝</span>
+                <span class="lang-name">Deutsch</span>
+            </div>
+            <div class="love-heart" data-lang="pt" data-text="Eu Te Amo">
+                <span class="heart-emoji">💖</span>
+                <span class="lang-name">Português</span>
+            </div>
+            <div class="love-heart" data-lang="ru" data-text="Я Тебя Люблю (Ya Tebya Lyublyu)">
+                <span class="heart-emoji">💗</span>
+                <span class="lang-name">Русский</span>
+            </div>
+            <div class="love-heart" data-lang="zh" data-text="我爱你 (Wǒ Ài Nǐ)">
+                <span class="heart-emoji">💕</span>
+                <span class="lang-name">中文</span>
+            </div>
+            <div class="love-heart" data-lang="ja" data-text="愛してる (Aishiteru)">
+                <span class="heart-emoji">💞</span>
+                <span class="lang-name">日本語</span>
+            </div>
+            <div class="love-heart" data-lang="ko" data-text="사랑해 (Saranghae)">
+                <span class="heart-emoji">💘</span>
+                <span class="lang-name">한국어</span>
+            </div>
+            <div class="love-heart" data-lang="ar" data-text="أحبك (Uhibbuk)">
+                <span class="heart-emoji">💟</span>
+                <span class="lang-name">العربية</span>
+            </div>
+            <div class="love-heart" data-lang="hi" data-text="मैं तुमसे प्यार करता हूँ (Main Tumse Pyaar Karta Hoon)">
+                <span class="heart-emoji">💓</span>
+                <span class="lang-name">हिन्दी</span>
+            </div>
+            <div class="love-heart" data-lang="gr" data-text="Σ'αγαπώ (S'agapo)">
+                <span class="heart-emoji">💝</span>
+                <span class="lang-name">Ελληνικά</span>
+            </div>
+            <div class="love-heart" data-lang="nl" data-text="Ik Hou Van Jou">
+                <span class="heart-emoji">💖</span>
+                <span class="lang-name">Nederlands</span>
+            </div>
+            <div class="love-heart" data-lang="sv" data-text="Jag Älskar Dig">
+                <span class="heart-emoji">💗</span>
+                <span class="lang-name">Svenska</span>
+            </div>
+            <div class="love-heart" data-lang="pl" data-text="Kocham Cię">
+                <span class="heart-emoji">💕</span>
+                <span class="lang-name">Polski</span>
+            </div>
+            <div class="love-heart" data-lang="th" data-text="ฉันรักคุณ (Chan Rak Khun)">
+                <span class="heart-emoji">💞</span>
+                <span class="lang-name">ไทย</span>
+            </div>
+            <div class="love-heart" data-lang="vi" data-text="Anh Yêu Em">
+                <span class="heart-emoji">💘</span>
+                <span class="lang-name">Tiếng Việt</span>
+            </div>
+            <div class="love-heart" data-lang="id" data-text="Aku Cinta Kamu">
+                <span class="heart-emoji">💟</span>
+                <span class="lang-name">Bahasa Indonesia</span>
+            </div>
+        </div>
+        <div id="love-display" class="love-display"></div>
+    </section>
+
+    <section id="games">
+        <h2>🎮 Mini Oyunlar</h2>
+        <p style="margin-bottom: 30px; font-size: 1.1rem; color: #d91e62;">Gel eğlenelim! 💕</p>
+        
+        <div class="games-container">
+            <!-- Kalp Toplama Oyunu -->
+            <div class="game-card">
+                <h3>💕 Kalp Topla</h3>
+                <p>Düşen kalpleri yakala! Klavyeden ← → tuşlarıyla hareket et.</p>
+                <button class="game-button" onclick="startHeartGame()">🎮 Oyna</button>
+            </div>
+
+            <!-- Memory Oyunu -->
+            <div class="game-card">
+                <h3>🧠 Hafıza Oyunu</h3>
+                <p>Eşleşen kartları bul ve bizim fotoğraflarımızı keşfet!</p>
+                <button class="game-button" onclick="startMemoryGame()">🎮 Oyna</button>
+            </div>
+
+            <!-- XOX Oyunu -->
+            <div class="game-card">
+                <h3>❌⭕ XOX Oyunu</h3>
+                <p>Klasik XOX oyunu! Kim kazanacak? 💪</p>
+                <button class="game-button" onclick="startTicTacToe()">🎮 Oyna</button>
+            </div>
+        </div>
+
+        <!-- Oyun Modal'ları -->
+        <div id="game-modal" class="game-modal">
+            <div class="game-modal-content">
+                <span class="close-game" onclick="closeGameModal()">&times;</span>
+                <div id="game-area"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Uçuşan kalplar -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

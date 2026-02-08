@@ -1,0 +1,1496 @@
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #ffc1e0 0%, #ffe6f2 50%, #fff0f8 100%);
+    color: #4a0e0e;
+    scroll-behavior: smooth;
+    text-align: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Uçuşan kalplar */
+body::before,
+body::after {
+    content: '❤️';
+    position: fixed;
+    font-size: 2rem;
+    opacity: 0.3;
+    animation: floatHeart 10s infinite ease-in-out;
+    z-index: 1;
+}
+
+body::before {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+body::after {
+    top: 20%;
+    right: 15%;
+    animation-delay: 3s;
+}
+
+@keyframes floatHeart {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+    25% { transform: translateY(-20px) rotate(5deg); opacity: 0.5; }
+    50% { transform: translateY(-40px) rotate(-5deg); opacity: 0.3; }
+    75% { transform: translateY(-20px) rotate(5deg); opacity: 0.5; }
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+    padding: 15px 30px;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 5px;
+}
+
+.nav-menu li {
+    display: inline;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Responsive Navigation */
+@media (max-width: 1200px) {
+    .nav-menu a {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+    
+    .nav-menu {
+        gap: 3px;
+    }
+}
+
+@media (max-width: 992px) {
+    nav {
+        padding: 15px 20px;
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 20px 0;
+        gap: 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 0;
+    }
+    
+    .nav-menu a {
+        display: block;
+        padding: 15px;
+        font-size: 1.1rem;
+        border-radius: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+section { 
+    padding: 100px 20px; 
+    min-height: 80vh;
+    position: relative;
+}
+
+/* Kalp dekorasyonları */
+section::before {
+    content: '💕';
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.15;
+    animation: floatHeart 8s infinite ease-in-out;
+    z-index: 0;
+}
+
+section:nth-child(even)::before {
+    left: 5%;
+    top: 15%;
+}
+
+section:nth-child(odd)::before {
+    right: 5%;
+    bottom: 15%;
+    animation-delay: 2s;
+}
+
+.photo-frame img {
+    width: 300px;
+    border: 10px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: rotate(-3deg); /* Hafif yamuk, scrapbook havası */
+}
+
+#timer {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d91e62;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.3);
+    display: inline-block;
+    margin: 20px;
+    border: 3px solid #ff8fab;
+    position: relative;
+    z-index: 1;
+}
+
+iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin: 20px 0;
+    position: relative;
+    z-index: 1;
+}
+
+h1, h2 {
+    color: #d91e62;
+    text-shadow: 2px 2px 4px rgba(217, 30, 98, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+/* Smooth animations */
+section {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.photo-frame {
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.photo-frame:hover {
+    transform: scale(1.05) rotate(0deg);
+}
+
+.photo-frame img:hover {
+    transform: rotate(0deg);
+}
+
+/* Galeri butonu */
+.gallery-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+    transition: all 0.3s ease;
+    border: 2px solid white;
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.6);
+    background: linear-gradient(135deg, #ff8fab, #ff6b9d);
+}
+
+/* Galeri bölümü */
+#gallery {
+    background: linear-gradient(180deg, #fff5f9 0%, #ffe6f2 100%);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.photo-item {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.photo-item::before {
+    content: "💕";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-item:hover::before {
+    opacity: 1;
+}
+
+.photo-item:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 107, 157, 0.4);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
+}
+
+.photo-item p {
+    color: #d91e62;
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Aşk mektubu bölümü */
+.love-letter {
+    max-width: 700px;
+    margin: 30px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    font-family: 'Georgia', serif;
+    line-height: 1.8;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.love-letter p {
+    margin: 20px 0;
+    color: #d91e62;
+}
+
+.love-letter strong {
+    color: #c0145a;
+    font-weight: bold;
+}
+
+/* Müzik bölümü */
+.music-container {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.video-notice {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.video-notice p {
+    color: #d91e62;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.music-container iframe {
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.youtube-play-button,
+.spotify-play-button {
+    display: inline-block;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid white;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.youtube-play-button {
+    background: linear-gradient(135deg, #FF0000, #CC0000);
+    color: white;
+}
+
+.youtube-play-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.5);
+    background: linear-gradient(135deg, #CC0000, #FF0000);
+}
+
+.spotify-play-button {
+    background: linear-gradient(135deg, #1DB954, #1ed760);
+    color: white;
+}
+
+.spotify-play-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(29, 185, 84, 0.5);
+    background: linear-gradient(135deg, #1ed760, #1DB954);
+}
+
+/* Kalp animasyonu */
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+}
+
+h1::before {
+    content: "❤️ ";
+    animation: heartbeat 1.5s infinite;
+    display: inline-block;
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    .photo-frame img {
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    iframe {
+        width: 100% !important;
+        max-width: 100%;
+        height: 300px !important;
+    }
+    
+    #timer {
+        font-size: 1.2rem;
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    section {
+        padding: 80px 15px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .gallery-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 20px 10px;
+    }
+    
+    .photo-item img {
+        height: 250px;
+    }
+    
+    .love-letter {
+        padding: 25px;
+        margin: 20px 10px;
+    }
+    
+    .music-container {
+        padding: 0 10px;
+    }
+    
+    .music-container iframe {
+        width: 100% !important;
+        height: 250px !important;
+    }
+    
+    .youtube-play-button,
+    .spotify-play-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+        width: 80%;
+    }
+    
+    .video-notice p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Uçuşan kalplar container */
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 99999;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 2rem;
+    animation: floatUp 7s ease-in infinite;
+    z-index: 99999;
+}
+
+@keyframes floatUp {
+    0% {
+        bottom: -50px;
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(100px) rotate(180deg);
+        opacity: 0.8;
+    }
+    100% {
+        bottom: 100vh;
+        transform: translateX(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Easter Egg - Açlık Modu */
+body.hunger-mode {
+    background: linear-gradient(135deg, #FFE5B4 0%, #FFDAB9 50%, #FFE4B5 100%) !important;
+    animation: hungerPulse 3s ease-in-out infinite;
+}
+
+@keyframes hungerPulse {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.1);
+    }
+}
+
+body.hunger-mode nav {
+    background: linear-gradient(135deg, #FF8C00 0%, #FFA500 100%) !important;
+}
+
+body.hunger-mode h1,
+body.hunger-mode h2 {
+    color: #D2691E !important;
+    text-shadow: 2px 2px 4px rgba(255, 140, 0, 0.3) !important;
+}
+
+body.hunger-mode #timer {
+    border-color: #FF8C00 !important;
+    color: #D2691E !important;
+    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.3) !important;
+}
+
+body.hunger-mode .gallery-button {
+    background: linear-gradient(135deg, #FF8C00, #FFA500) !important;
+}
+
+body.hunger-mode .photo-item:hover {
+    box-shadow: 0 15px 40px rgba(255, 140, 0, 0.4) !important;
+}
+
+.food {
+    pointer-events: none;
+}
+
+/* Diller Bölümü */
+.language-hearts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+.love-heart {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.love-heart:hover {
+    transform: translateY(-10px) scale(1.1);
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+}
+
+.love-heart:active {
+    transform: scale(0.95);
+}
+
+.heart-emoji {
+    font-size: 3rem;
+    animation: heartPulse 1.5s infinite;
+}
+
+@keyframes heartPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.lang-name {
+    font-size: 0.9rem;
+    color: #d91e62;
+    font-weight: 600;
+}
+
+.love-display {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #d91e62;
+    animation: fadeInScale 0.5s ease;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Oyunlar Bölümü */
+.games-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.game-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.2);
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(255, 107, 157, 0.3);
+}
+
+.game-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #d91e62;
+}
+
+.game-card p {
+    margin-bottom: 20px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.game-button {
+    background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+}
+
+.game-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.5);
+}
+
+.game-button:active {
+    transform: translateY(0);
+}
+
+/* Oyun Modal */
+.game-modal {
+    display: none;
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.game-modal-content {
+    background: linear-gradient(135deg, #fff5f9 0%, #ffe6f2 100%);
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(255, 107, 157, 0.4);
+}
+
+.close-game {
+    color: #d91e62;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-game:hover {
+    color: #ff6b9d;
+    transform: scale(1.2);
+}
+
+#game-area {
+    margin-top: 20px;
+}
+
+/* Kalp Toplama Oyunu */
+.heart-game-canvas {
+    background: linear-gradient(180deg, #87CEEB 0%, #fff5f9 100%);
+    border-radius: 15px;
+    border: 3px solid #ff8fab;
+    display: block;
+    margin: 0 auto;
+}
+
+.game-score {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #d91e62;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/* Memory Oyunu */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.memory-card {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #ff8fab, #ffc1e0);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.memory-card:hover {
+    transform: scale(1.05);
+}
+
+.memory-card.flipped {
+    background: white;
+}
+
+.memory-card.matched {
+    background: #c8e6c9;
+    pointer-events: none;
+}
+
+/* XOX Oyunu */
+.tictactoe-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.tictactoe-cell {
+    aspect-ratio: 1;
+    background: white;
+    border: 3px solid #ff8fab;
+    border-radius: 10px;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tictactoe-cell:hover:not(.taken) {
+    background: #ffe6f2;
+    transform: scale(1.05);
+}
+
+.tictactoe-cell.taken {
+    cursor: not-allowed;
+}
+
+.game-status {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #d91e62;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.game-restart {
+    display: block;
+    margin: 20px auto 0;
+    background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.game-restart:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 107, 157, 0.4);
+}
+
+/* Responsive - Oyunlar */
+@media (max-width: 768px) {
+    .language-hearts {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+    
+    .love-display {
+        font-size: 1.8rem;
+    }
+    
+    .games-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .memory-grid {
+        max-width: 320px;
+    }
+    
+    .tictactoe-board {
+        max-width: 250px;
+    }
+    
+    .tictactoe-cell {
+        font-size: 2rem;
+    }
+}
+
+/* Doğum Günleri Bölümü */
+.birthdays-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.birthday-card {
+    background: linear-gradient(135deg, #fff 0%, #ffe6f2 100%);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid #ff8fab;
+    position: relative;
+    overflow: hidden;
+}
+
+.birthday-card::before {
+    content: '🎂';
+    position: absolute;
+    font-size: 8rem;
+    opacity: 0.05;
+    right: -20px;
+    bottom: -20px;
+    z-index: 0;
+}
+
+.birthday-card:hover {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: 0 12px 35px rgba(255, 107, 157, 0.5);
+}
+
+.birthday-card.special-card {
+    background: linear-gradient(135deg, #ffd1dc 0%, #ffe6f2 100%);
+    border-color: #ff6b9d;
+}
+
+.birthday-card.special-card::before {
+    content: '💕';
+}
+
+.birthday-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.birthday-card h3 {
+    color: #d91e62;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.birthday-date {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6b9d;
+    margin: 15px 0;
+    text-shadow: 2px 2px 4px rgba(255, 107, 157, 0.2);
+}
+
+.birthday-countdown {
+    background: rgba(255, 107, 157, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #d91e62;
+    font-size: 1.1rem;
+}
+
+.birthday-message {
+    font-style: italic;
+    color: #666;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+/* Yıldız Haritası Bölümü */
+.star-map-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: center;
+}
+
+.star-info {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.3);
+    text-align: left;
+    border: 3px solid #ff8fab;
+}
+
+.star-info h3 {
+    color: #d91e62;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.star-info p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    color: #4a0e0e;
+    line-height: 1.8;
+}
+
+.star-info strong {
+    color: #ff6b9d;
+}
+
+.star-quote {
+    font-style: italic;
+    color: #d91e62;
+    text-align: center;
+    margin-top: 30px !important;
+    padding: 20px;
+    background: rgba(255, 107, 157, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid #ff6b9d;
+}
+
+.star-canvas {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#starCanvas {
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 50%, #2a1a4a 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), inset 0 0 50px rgba(255, 255, 255, 0.1);
+    max-width: 100%;
+    height: auto;
+}
+
+.constellation-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.star-label {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: twinkle 2s infinite ease-in-out;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+.star-label.heart-star {
+    font-size: 3rem;
+    animation: pulse 2s infinite ease-in-out, twinkle 2s infinite ease-in-out;
+    filter: drop-shadow(0 0 20px rgba(255, 107, 157, 1));
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+/* Responsive - Yeni Bölümler */
+@media (max-width: 768px) {
+    .birthdays-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    
+    .birthday-card {
+        padding: 20px;
+    }
+    
+    .star-map-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .star-info {
+        padding: 20px;
+    }
+    
+    .star-info p {
+        font-size: 1rem;
+    }
+    
+    #starCanvas {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Aşk Termometresi */
+.thermometer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    align-items: center;
+}
+
+.thermometer-info {
+    background: linear-gradient(135deg, #fff 0%, #ffe6f2 100%);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.3);
+    border: 3px solid #ff8fab;
+    text-align: center;
+}
+
+.thermometer-info h3 {
+    color: #d91e62;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.love-level-display {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #ff6b9d;
+    text-shadow: 3px 3px 6px rgba(255, 107, 157, 0.3);
+    margin: 20px 0;
+    animation: pulse 2s infinite;
+}
+
+.love-status {
+    font-size: 1.5rem;
+    color: #d91e62;
+    margin: 20px 0;
+    font-weight: bold;
+    min-height: 40px;
+}
+
+.measure-button {
+    background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.measure-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.6);
+}
+
+.measure-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.thermometer-note {
+    font-size: 0.9rem;
+    color: #999;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+.thermometer-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.thermometer-tube {
+    position: relative;
+    width: 80px;
+    height: 400px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    border-radius: 40px;
+    border: 4px solid #ff8fab;
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.3), inset 0 0 20px rgba(255, 107, 157, 0.1);
+    overflow: hidden;
+}
+
+.thermometer-mercury {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 100%;
+    background: linear-gradient(to top, #ff1744, #ff6b9d, #ffa8c5);
+    border-radius: 25px;
+    transition: height 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    box-shadow: 0 0 20px rgba(255, 23, 68, 0.5);
+}
+
+.mercury-bubble {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #ff1744, #ff6b9d);
+    border-radius: 50%;
+    animation: mercuryPulse 2s infinite;
+    box-shadow: 0 0 30px rgba(255, 23, 68, 0.8);
+}
+
+@keyframes mercuryPulse {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.1); }
+}
+
+.thermometer-marks {
+    position: absolute;
+    top: 0;
+    right: -30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.mark {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.mark::before {
+    content: '';
+    width: 15px;
+    height: 2px;
+    background: #ff8fab;
+    margin-right: 10px;
+}
+
+.mark span {
+    color: #d91e62;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.thermometer-bulb {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #ff1744, #ff6b9d);
+    border-radius: 50%;
+    border: 4px solid #ff8fab;
+    position: relative;
+    margin-top: -20px;
+    box-shadow: 0 8px 25px rgba(255, 23, 68, 0.5);
+    animation: bulbGlow 2s infinite;
+}
+
+@keyframes bulbGlow {
+    0%, 100% { box-shadow: 0 8px 25px rgba(255, 23, 68, 0.5); }
+    50% { box-shadow: 0 8px 35px rgba(255, 23, 68, 0.8), 0 0 50px rgba(255, 23, 68, 0.4); }
+}
+
+.bulb-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+    border-radius: 50%;
+}
+
+.love-particles {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+}
+
+/* Günlük Aşk Sözü */
+.quote-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.quote-card {
+    background: linear-gradient(135deg, #fff 0%, #ffe6f2 100%);
+    border-radius: 20px;
+    padding: 60px 40px;
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.3);
+    border: 3px solid #ff8fab;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.quote-card::before {
+    content: '💕';
+    position: absolute;
+    font-size: 15rem;
+    opacity: 0.03;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.quote-icon {
+    font-size: 6rem;
+    color: #ff8fab;
+    line-height: 0.5;
+    margin-bottom: 20px;
+    opacity: 0.6;
+}
+
+.quote-text {
+    font-size: 1.8rem;
+    color: #d91e62;
+    line-height: 1.8;
+    font-style: italic;
+    margin: 30px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.quote-author {
+    font-size: 1.2rem;
+    color: #ff6b9d;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.refresh-quote-button {
+    background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.refresh-quote-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.6);
+}
+
+.refresh-quote-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.quote-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.quote-decoration .floating-heart {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatQuoteHeart 4s infinite ease-in-out;
+    opacity: 0.3;
+}
+
+.quote-decoration .floating-heart:nth-child(1) {
+    top: 10%;
+    left: 10%;
+}
+
+.quote-decoration .floating-heart:nth-child(2) {
+    top: 20%;
+    right: 15%;
+}
+
+.quote-decoration .floating-heart:nth-child(3) {
+    bottom: 20%;
+    left: 15%;
+}
+
+.quote-decoration .floating-heart:nth-child(4) {
+    bottom: 10%;
+    right: 10%;
+}
+
+@keyframes floatQuoteHeart {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-15px) rotate(5deg); }
+    50% { transform: translateY(-30px) rotate(-5deg); }
+    75% { transform: translateY(-15px) rotate(5deg); }
+}
+
+/* Responsive - Termometre ve Quote */
+@media (max-width: 768px) {
+    .thermometer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .thermometer-info {
+        padding: 30px 20px;
+    }
+    
+    .love-level-display {
+        font-size: 4rem;
+    }
+    
+    .thermometer-tube {
+        height: 300px;
+        width: 60px;
+    }
+    
+    .thermometer-bulb {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .quote-card {
+        padding: 40px 20px;
+    }
+    
+    .quote-text {
+        font-size: 1.3rem;
+    }
+    
+    .quote-icon {
+        font-size: 4rem;
+    }
+}
